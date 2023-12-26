@@ -5,16 +5,6 @@ end
 
 local opt = vim.opt
 
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "tex",
---   callback = function()
---     opt.shiftwidth = 4
---     opt.tabstop = 4
---     opt.softtabstop = 4
---     require("cmp").setup.buffer { enabled = false }
---   end,
--- })
-
 opt.clipboard = ""
 opt.wrap = false
 
