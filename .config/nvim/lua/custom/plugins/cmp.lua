@@ -17,14 +17,14 @@ return {
       select = true,
     }
     opts.mapping["<Tab>"] = function(fallback)
-      if require("luasnip").expand_or_jumpable() then
+      if vim.bo.filetype ~= "tex" and require("luasnip").expand_or_jumpable() then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
       else
         fallback()
       end
     end
     opts.mapping["<S-Tab>"] = function(fallback)
-      if require("luasnip").jumpable(-1) then
+      if vim.bo.filetype ~= "tex" and require("luasnip").jumpable(-1) then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
       else
         fallback()
