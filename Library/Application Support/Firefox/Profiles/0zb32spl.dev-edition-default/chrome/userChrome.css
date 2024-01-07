@@ -3,9 +3,9 @@
     background: transparent !important;
 }
 
-#appcontent {
-    background: transparent !important;
-}
+/* #appcontent { */
+/*     background: transparent !important; */
+/* } */
 
 #TabsToolbar,
 .table-widget-empty-text
@@ -36,7 +36,7 @@
 }
 
 #navigator-toolbox {
-    background-color: rgba(0,0,0,0.25) !important;
+    background-color: rgba(0,0,0,0.5) !important;
 }
 
 /* menubar + bookmarks */
