@@ -16,3 +16,6 @@ opt.incsearch = true
 opt.termguicolors = true
 
 opt.colorcolumn = "80"
+
+opt.spell = true
+opt.spelllang = "en_us"
