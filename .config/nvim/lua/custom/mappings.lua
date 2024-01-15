@@ -70,6 +70,48 @@ M.dap_python = {
       function()
         require("dap-python").test_method()
       end,
+      "Test python method",
+    },
+  },
+}
+
+M.trouble = {
+  n = {
+    ["<leader>xx"] = {
+      function()
+        require("trouble").toggle()
+      end,
+      "Toggle trouble",
+    },
+    ["<leader>xw"] = {
+      function()
+        require("trouble").toggle "workspace_diagnostics"
+      end,
+      "Workspace diagnostics",
+    },
+    ["<leader>xd"] = {
+      function()
+        require("trouble").toggle "document_diagnostics"
+      end,
+      "Document diagnostics",
+    },
+    ["<leader>xq"] = {
+      function()
+        require("trouble").toggle "quickfix"
+      end,
+      "Trouble quickfix",
+    },
+    ["<leader>xl"] = {
+      function()
+        require("trouble").toggle "loclist"
+      end,
+      "Trouble loclist",
+    },
+    ["gR"] = {
+      function()
+        require("trouble").toggle "lsp_references"
+      end,
+      "Trouble lsp references",
     },
   },
 }

@@ -1,6 +1,6 @@
 return {
   "SirVer/ultisnips",
-  lazy = false,
+  ft = { "tex" },
   init = function()
     vim.g.UltiSnipsExpandTrigger = "<tab>"
     vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
