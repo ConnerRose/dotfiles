@@ -15,7 +15,9 @@ return {
         formatting.clang_format,
         formatting.latexindent,
         formatting.stylua,
+        formatting.prettier,
 
+        diagnostics.eslint,
         diagnostics.mypy,
         diagnostics.ruff,
       },
