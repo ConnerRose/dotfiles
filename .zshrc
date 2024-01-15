@@ -116,6 +116,9 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 # Add jdk to path
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+# Disable autocd
+unsetopt autocd
+
 # Disable default venv prompt
 # export VIRTUAL_ENV_DISABLE_PROMPT="TRUE"
 
