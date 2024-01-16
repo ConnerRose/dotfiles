@@ -11,7 +11,9 @@ return {
 
     return {
       sources = {
-        formatting.black,
+        formatting.black.with {
+          extra_args = { "--config", vim.fn.expand "~/.config/black" },
+        },
         formatting.clang_format,
         formatting.latexindent,
         formatting.stylua,
