@@ -32,6 +32,12 @@ return {
         au!
         au User VimtexEventQuit call vimtex#compiler#clean(0)
         augroup END
+
+        let g:vimtex_syntax_custom_cmds = [
+          \ {'name': 'F', 'mathmode': 1, 'concealchar': '𝓕'},
+          \ {'name': 'O', 'mathmode': 1, 'concealchar': 'Ω'},
+          \ {'name': 'P', 'mathmode': 1, 'concealchar': 'ℙ'},
+        \]
         ]]
   end,
 }
