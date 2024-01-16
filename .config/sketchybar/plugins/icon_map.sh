@@ -170,7 +170,7 @@ case $@ in
 "Evernote Legacy")
   icon_result=":evernote_legacy:"
   ;;
-"Calendar" | "Fantastical")
+"Calendar" | "Fantastical" | "Cron")
   icon_result=":calendar:"
   ;;
 "Android Studio")

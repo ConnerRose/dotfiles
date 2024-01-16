@@ -1,0 +1,38 @@
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# swap window
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# focus display
+alt - n : yabai -m display --focus west
+alt - m : yabai -m display --focus east
+ 
+# move window across displays
+shift + alt - n : yabai -m window --display west; yabai -m display --focus west;
+shift + alt - m : yabai -m window --display east; yabai -m display --focus east;
+
+# move window across spaces
+alt - 1 : yabai -m window --space 1; skhd -k "ctrl - 1"
+alt - 2 : yabai -m window --space 2; skhd -k "ctrl - 2"
+alt - 3 : yabai -m window --space 3; skhd -k "ctrl - 3"
+alt - 4 : yabai -m window --space 4; skhd -k "ctrl - 4"
+alt - 5 : yabai -m window --space 5; skhd -k "ctrl - 5"
+alt - 6 : yabai -m window --space 6; skhd -k "ctrl - 6"
+alt - 7 : yabai -m window --space 7; skhd -k "ctrl - 7"
+alt - 8 : yabai -m window --space 8; skhd -k "ctrl - 8"
+alt - 9 : yabai -m window --space 9; skhd -k "ctrl - 9"
+
+alt - r : \
+  brew services restart sketchybar; \
+  brew services restart borders; \
+  skhd --stop-service; \
+  skhd --start-service; \
+  yabai --stop-service; \
+  yabai --start-service;
