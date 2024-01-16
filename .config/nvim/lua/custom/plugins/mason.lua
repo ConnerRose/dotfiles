@@ -8,6 +8,7 @@ return {
       "codelldb",
       "debugpy",
       "eslint-lsp",
+      "isort",
       "js-debug-adapter",
       "latexindent",
       "lua-language-server",

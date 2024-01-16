@@ -15,6 +15,7 @@ return {
           extra_args = { "--config", vim.fn.expand "~/.config/black" },
         },
         formatting.clang_format,
+        formatting.isort,
         formatting.latexindent,
         formatting.stylua,
         formatting.prettier,
