@@ -37,6 +37,7 @@ return {
           \ {'name': 'F', 'mathmode': 1, 'concealchar': '𝓕'},
           \ {'name': 'O', 'mathmode': 1, 'concealchar': 'Ω'},
           \ {'name': 'P', 'mathmode': 1, 'concealchar': 'ℙ'},
+          \ {'name': 'eps', 'mathmode': 1, 'concealchar': 'ε'},
         \]
         ]]
   end,
