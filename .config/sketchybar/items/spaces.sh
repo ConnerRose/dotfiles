@@ -55,5 +55,5 @@ separator=(
 sketchybar --add bracket spaces_bracket '/space\..*/'  \
            --set spaces_bracket "${spaces_bracket[@]}" \
                                                        \
-           --add item separator left                   \
-           --set separator "${separator[@]}"
+           # --add item separator left                   \
+           # --set separator "${separator[@]}"

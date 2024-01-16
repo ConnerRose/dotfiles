@@ -26,7 +26,7 @@ window_state() {
     COLOR=$RED
   fi
 
-  args=(--animate sin 10 --bar border_color=$COLOR
+  args=(--animate sin 10 --bar border_color=$BAR_BORDER_COLOR
                          --set $NAME icon.color=$COLOR)
 
   [ -z "$LABEL" ] && args+=(label.width=0) \
@@ -36,6 +36,7 @@ window_state() {
                  || args+=(icon="$ICON" icon.width=30)
 
   sketchybar -m "${args[@]}"
+  windows_on_spaces
 }
 
 windows_on_spaces () {
@@ -49,14 +50,14 @@ windows_on_spaces () {
   do
     for space in $line
     do
-      icon_strip=" "
+      icon_strip=""
       apps=$(yabai -m query --windows --space $space | jq -r ".[].app")
       if [ "$apps" != "" ]; then
         while IFS= read -r app; do
           icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
         done <<< "$apps"
+        args+=(--set space.$space label="$icon_strip" label.drawing=on)
       fi
-      args+=(--set space.$space label="$icon_strip" label.drawing=on)
     done
   done <<< "$CURRENT_SPACES"
 
@@ -73,7 +74,7 @@ case "$SENDER" in
   ;;
   "forced") exit 0
   ;;
-  "window_focus") window_state 
+  "window_focus") window_state
   ;;
   "windows_on_spaces" | "space_change") windows_on_spaces
   ;;
