@@ -10,6 +10,12 @@ shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
+# move window
+shift + cmd - h : yabai -m window --warp west
+shift + cmd - j : yabai -m window --warp south
+shift + cmd - k : yabai -m window --warp north
+shift + cmd - l : yabai -m window --warp east
+
 # focus display
 alt - n : yabai -m display --focus west
 alt - m : yabai -m display --focus east
@@ -29,7 +35,23 @@ alt - 7 : yabai -m window --space 7; skhd -k "ctrl - 7"
 alt - 8 : yabai -m window --space 8; skhd -k "ctrl - 8"
 alt - 9 : yabai -m window --space 9; skhd -k "ctrl - 9"
 
-alt - r : \
+# balance window size
+alt - 0 : yabai -m space --balance
+
+# resize window
+alt - left : yabai -m window --resize left:-50:0
+alt - down : yabai -m window --resize bottom:0:50
+alt - up : yabai -m window --resize top:0:-50
+alt - right : yabai -m window --resize right:50:0
+
+# full screen
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# rotate space
+alt - r : yabai -m space --rotate 90
+
+# reload everything
+shift + alt - r : \
   brew services restart sketchybar; \
   brew services restart borders; \
   skhd --stop-service; \
