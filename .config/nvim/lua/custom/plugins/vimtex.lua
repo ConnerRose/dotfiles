@@ -35,6 +35,7 @@ return {
 
         let g:vimtex_syntax_custom_cmds = [
           \ {'name': 'F', 'mathmode': 1, 'concealchar': '𝓕'},
+          \ {'name': 'R', 'mathmode': 1, 'concealchar': 'ℝ'},
           \ {'name': 'O', 'mathmode': 1, 'concealchar': 'Ω'},
           \ {'name': 'P', 'mathmode': 1, 'concealchar': 'ℙ'},
           \ {'name': 'eps', 'mathmode': 1, 'concealchar': 'ε'},
