@@ -8,6 +8,7 @@ return {
       "clangd",
       "codelldb",
       "debugpy",
+      "djlint",
       "eslint-lsp",
       "isort",
       "js-debug-adapter",

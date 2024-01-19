@@ -15,19 +15,31 @@ return {
           extra_args = { "--config", vim.fn.expand "~/.config/black" },
         },
         formatting.clang_format,
+        formatting.djlint.with {
+          extra_args = { "--indent", 2 },
+        },
         formatting.isort,
         formatting.latexindent,
         formatting.stylua,
-        formatting.prettier,
+        formatting.prettier.with {
+          disabled_filetypes = { "jinja.html" },
+        },
 
+        diagnostics.djlint,
         diagnostics.eslint,
         diagnostics.mypy.with {
           extra_args = function()
             local virtual = os.getenv "VIRTUAL_ENV" or os.getenv "CONDA_PREFIX"
             if virtual then
-              return { "--python-executable", virtual .. "/bin/python3" }
+              return {
+                "--python-executable",
+                virtual .. "/bin/python3",
+              }
             end
-            return { "--python-executable", "~/.pyenv/shims/python3" }
+            return {
+              "--python-executable",
+              "~/.pyenv/shims/python3",
+            }
           end,
         },
         diagnostics.ruff,
