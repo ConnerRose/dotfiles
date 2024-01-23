@@ -18,14 +18,30 @@ return {
     }
     opts.mapping["<Tab>"] = function(fallback)
       if vim.bo.filetype ~= "tex" and require("luasnip").jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-next", true, true, true), "")
+        vim.fn.feedkeys(
+          vim.api.nvim_replace_termcodes(
+            "<Plug>luasnip-jump-next",
+            true,
+            true,
+            true
+          ),
+          ""
+        )
       else
         fallback()
       end
     end
     opts.mapping["<S-Tab>"] = function(fallback)
       if vim.bo.filetype ~= "tex" and require("luasnip").jumpable(-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+        vim.fn.feedkeys(
+          vim.api.nvim_replace_termcodes(
+            "<Plug>luasnip-jump-prev",
+            true,
+            true,
+            true
+          ),
+          ""
+        )
       else
         fallback()
       end

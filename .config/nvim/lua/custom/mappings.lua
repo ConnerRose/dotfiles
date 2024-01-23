@@ -37,7 +37,10 @@ M.dap = {
     },
     ["<F5>"] = {
       function()
-        require("dap.ext.vscode").load_launchjs(nil, { codelldb = { "c", "cpp" } })
+        require("dap.ext.vscode").load_launchjs(
+          nil,
+          { codelldb = { "c", "cpp" } }
+        )
         require("dap").continue()
       end,
       "Toggle breakpoint",
