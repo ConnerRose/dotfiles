@@ -24,6 +24,12 @@ return {
         formatting.prettier.with {
           disabled_filetypes = { "jinja.html" },
         },
+        formatting.beautysh.with {
+          extra_args = { "--indent-size", "2" },
+        },
+        formatting.sql_formatter.with {
+          extra_args = { "--language", "sqlite" },
+        },
 
         diagnostics.djlint,
         diagnostics.eslint,

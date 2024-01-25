@@ -4,6 +4,7 @@ return {
     ensure_installed = {
       "bash-language-server",
       "black",
+      "beautysh",
       "clang-format",
       "clangd",
       "codelldb",
@@ -19,6 +20,7 @@ return {
       "pyright",
       "ruff",
       "stylua",
+      "sql-formatter",
       "typescript-language-server",
     },
   },
