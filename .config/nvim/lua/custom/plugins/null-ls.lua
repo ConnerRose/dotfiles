@@ -33,22 +33,22 @@ return {
 
         diagnostics.djlint,
         diagnostics.eslint,
-        diagnostics.mypy.with {
-          extra_args = function()
-            local virtual = os.getenv "VIRTUAL_ENV" or os.getenv "CONDA_PREFIX"
-            if virtual then
-              return {
-                "--python-executable",
-                virtual .. "/bin/python3",
-              }
-            end
-            return {
-              "--python-executable",
-              "~/.pyenv/shims/python3",
-            }
-          end,
-        },
-        diagnostics.ruff,
+        -- diagnostics.mypy.with {
+        --   extra_args = function()
+        --     local virtual = os.getenv "VIRTUAL_ENV" or os.getenv "CONDA_PREFIX"
+        --     if virtual then
+        --       return {
+        --         "--python-executable",
+        --         virtual .. "/bin/python3",
+        --       }
+        --     end
+        --     return {
+        --       "--python-executable",
+        --       vim.fn.expand "~/.pyenv/shims/python3",
+        --     }
+        --   end,
+        -- },
+        -- diagnostics.ruff,
       },
       on_attach = function(client, bufnr)
         if client.supports_method "textDocument/formatting" then
