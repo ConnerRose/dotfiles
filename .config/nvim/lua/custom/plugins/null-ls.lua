@@ -28,7 +28,12 @@ return {
           extra_args = { "--indent-size", "2" },
         },
         formatting.sql_formatter.with {
-          extra_args = { "--language", "sqlite" },
+          extra_args = {
+            "--language",
+            "sqlite",
+            "--config",
+            '{"tabWidth": 4}',
+          },
         },
 
         diagnostics.djlint,
