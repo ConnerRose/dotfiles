@@ -32,8 +32,8 @@ do
   )
 
   sketchybar --add space space.$sid left    \
-             --set space.$sid "${space[@]}" \
-             --subscribe space.$sid mouse.clicked
+    --set space.$sid "${space[@]}" \
+    --subscribe space.$sid mouse.clicked
 done
 
 spaces_bracket=(
@@ -53,7 +53,7 @@ separator=(
 )
 
 sketchybar --add bracket spaces_bracket '/space\..*/'  \
-           --set spaces_bracket "${spaces_bracket[@]}" \
-                                                       \
-           # --add item separator left                   \
-           # --set separator "${separator[@]}"
+  --set spaces_bracket "${spaces_bracket[@]}" \
+  \
+  # --add item separator left                   \
+  # --set separator "${separator[@]}"

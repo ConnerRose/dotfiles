@@ -14,11 +14,12 @@ void handler(env env) {
     // CPU graph updates
     cpu_update(&g_cpu);
 
-    if (strlen(g_cpu.command) > 0) sketchybar(g_cpu.command);
+    if (strlen(g_cpu.command) > 0)
+      sketchybar(g_cpu.command);
   }
 }
 
-int main (int argc, char** argv) {
+int main(int argc, char** argv) {
   cpu_init(&g_cpu);
 
   if (argc < 2) {

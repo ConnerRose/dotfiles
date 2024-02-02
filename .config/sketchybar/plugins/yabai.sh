@@ -27,13 +27,13 @@ window_state() {
   fi
 
   args=(--animate sin 10 --bar border_color=$BAR_BORDER_COLOR
-                         --set $NAME icon.color=$COLOR)
+  --set $NAME icon.color=$COLOR)
 
   [ -z "$LABEL" ] && args+=(label.width=0) \
-                  || args+=(label="$LABEL" label.width=40)
+    || args+=(label="$LABEL" label.width=40)
 
   [ -z "$ICON" ] && args+=(icon.width=0) \
-                 || args+=(icon="$ICON" icon.width=30)
+    || args+=(icon="$ICON" icon.width=30)
 
   sketchybar -m "${args[@]}"
   windows_on_spaces
@@ -43,8 +43,8 @@ windows_on_spaces () {
   CURRENT_SPACES="$(yabai -m query --displays | jq -r '.[].spaces | @sh')"
 
   args=(--set spaces_bracket drawing=off
-        --set '/space\..*/' background.drawing=on
-        --animate sin 10)
+    --set '/space\..*/' background.drawing=on
+  --animate sin 10)
 
   while read -r line
   do
@@ -71,11 +71,11 @@ mouse_clicked() {
 
 case "$SENDER" in
   "mouse.clicked") mouse_clicked
-  ;;
+    ;;
   "forced") exit 0
-  ;;
+    ;;
   "window_focus") window_state
-  ;;
+    ;;
   "windows_on_spaces" | "space_change") windows_on_spaces
-  ;;
+    ;;
 esac

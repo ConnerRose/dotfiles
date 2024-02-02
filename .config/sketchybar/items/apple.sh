@@ -32,13 +32,13 @@ apple_lock=(
 )
 
 sketchybar --add item apple.logo left                  \
-           --set apple.logo "${apple_logo[@]}"         \
-                                                       \
-           --add item apple.prefs popup.apple.logo     \
-           --set apple.prefs "${apple_prefs[@]}"       \
-                                                       \
-           --add item apple.activity popup.apple.logo  \
-           --set apple.activity "${apple_activity[@]}" \
-                                                       \
-           --add item apple.lock popup.apple.logo      \
-           --set apple.lock "${apple_lock[@]}"
+  --set apple.logo "${apple_logo[@]}"         \
+  \
+  --add item apple.prefs popup.apple.logo     \
+  --set apple.prefs "${apple_prefs[@]}"       \
+  \
+  --add item apple.activity popup.apple.logo  \
+  --set apple.activity "${apple_activity[@]}" \
+  \
+  --add item apple.lock popup.apple.logo      \
+  --set apple.lock "${apple_lock[@]}"

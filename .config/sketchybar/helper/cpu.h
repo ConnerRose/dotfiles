@@ -1,14 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <mach/mach.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 #define MAX_TOPPROC_LEN 28
 
-static const char TOPPROC[] = { "/bin/ps -Aceo pid,pcpu,comm -r" }; 
-static const char FILTER_PATTERN[] = { "com.apple." };
+static const char TOPPROC[] = {"/bin/ps -Aceo pid,pcpu,comm -r"};
+static const char FILTER_PATTERN[] = {"com.apple."};
 
 struct cpu {
   host_t host;
@@ -28,10 +28,8 @@ static inline void cpu_init(struct cpu* cpu) {
 }
 
 static inline void cpu_update(struct cpu* cpu) {
-  kern_return_t error = host_statistics(cpu->host,
-                                        HOST_CPU_LOAD_INFO,
-                                        (host_info_t)&cpu->load,
-                                        &cpu->count                );
+  kern_return_t error = host_statistics(cpu->host, HOST_CPU_LOAD_INFO,
+                                        (host_info_t)&cpu->load, &cpu->count);
 
   if (error != KERN_SUCCESS) {
     printf("Error: Could not read cpu host statistics.\n");
@@ -39,22 +37,20 @@ static inline void cpu_update(struct cpu* cpu) {
   }
 
   if (cpu->has_prev_load) {
-    uint32_t delta_user = cpu->load.cpu_ticks[CPU_STATE_USER]
-                          - cpu->prev_load.cpu_ticks[CPU_STATE_USER];
+    uint32_t delta_user = cpu->load.cpu_ticks[CPU_STATE_USER] -
+                          cpu->prev_load.cpu_ticks[CPU_STATE_USER];
 
-    uint32_t delta_system = cpu->load.cpu_ticks[CPU_STATE_SYSTEM]
-                            - cpu->prev_load.cpu_ticks[CPU_STATE_SYSTEM];
+    uint32_t delta_system = cpu->load.cpu_ticks[CPU_STATE_SYSTEM] -
+                            cpu->prev_load.cpu_ticks[CPU_STATE_SYSTEM];
 
-    uint32_t delta_idle = cpu->load.cpu_ticks[CPU_STATE_IDLE]
-                          - cpu->prev_load.cpu_ticks[CPU_STATE_IDLE];
+    uint32_t delta_idle = cpu->load.cpu_ticks[CPU_STATE_IDLE] -
+                          cpu->prev_load.cpu_ticks[CPU_STATE_IDLE];
 
-    double user_perc = (double)delta_user / (double)(delta_system
-                                                     + delta_user
-                                                     + delta_idle);
+    double user_perc =
+        (double)delta_user / (double)(delta_system + delta_user + delta_idle);
 
-    double sys_perc = (double)delta_system / (double)(delta_system
-                                                      + delta_user
-                                                      + delta_idle);
+    double sys_perc =
+        (double)delta_system / (double)(delta_system + delta_user + delta_idle);
 
     double total_perc = user_perc + sys_perc;
 
@@ -63,7 +59,7 @@ static inline void cpu_update(struct cpu* cpu) {
 
     file = popen(TOPPROC, "r");
     if (!file) {
-      printf("Error: TOPPROC command errored out...\n" );
+      printf("Error: TOPPROC command errored out...\n");
       return;
     }
 
@@ -75,7 +71,7 @@ static inline void cpu_update(struct cpu* cpu) {
     uint32_t caret = 0;
     for (int i = 0; i < sizeof(line); i++) {
       if (start && i == start - line) {
-        i+=9;
+        i += 9;
         continue;
       }
 
@@ -83,9 +79,11 @@ static inline void cpu_update(struct cpu* cpu) {
         topproc[caret++] = '.';
         continue;
       }
-      if (caret > MAX_TOPPROC_LEN + 2) break;
+      if (caret > MAX_TOPPROC_LEN + 2)
+        break;
       topproc[caret++] = line[i];
-      if (line[i] == '\0') break;
+      if (line[i] == '\0')
+        break;
     }
 
     topproc[MAX_TOPPROC_LEN + 3] = '\0';
@@ -103,17 +101,13 @@ static inline void cpu_update(struct cpu* cpu) {
       snprintf(color, 16, "%s", getenv("LABEL_COLOR"));
     }
 
-    snprintf(cpu->command, 256, "--push cpu.sys %.2f "
-                                "--push cpu.user %.2f "
-                                "--set cpu.top label='%s' "
-                                "--set cpu.percent label=%.0f%% label.color=%s ",
-                                sys_perc,
-                                user_perc,
-                                topproc,
-                                total_perc*100.,
-                                color          );
-  }
-  else {
+    snprintf(cpu->command, 256,
+             "--push cpu.sys %.2f "
+             "--push cpu.user %.2f "
+             "--set cpu.top label='%s' "
+             "--set cpu.percent label=%.0f%% label.color=%s ",
+             sys_perc, user_perc, topproc, total_perc * 100., color);
+  } else {
     snprintf(cpu->command, 256, "");
   }
 

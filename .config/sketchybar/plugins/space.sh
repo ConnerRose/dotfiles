@@ -7,8 +7,8 @@ update() {
     COLOR=$GREY
   fi
   sketchybar --set $NAME icon.highlight=$SELECTED \
-                         label.highlight=$SELECTED \
-                         background.border_color=$COLOR
+    label.highlight=$SELECTED \
+    background.border_color=$COLOR
 }
 
 mouse_clicked() {
@@ -24,7 +24,7 @@ mouse_clicked() {
 
 case "$SENDER" in
   "mouse.clicked") mouse_clicked
-  ;;
+    ;;
   *) update
-  ;;
+    ;;
 esac

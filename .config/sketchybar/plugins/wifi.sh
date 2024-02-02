@@ -3,7 +3,7 @@
 update() {
   source "$CONFIG_DIR/icons.sh"
   LABEL="$INFO ($(ipconfig getifaddr en0))"
-  ICON="$([ -n "$INFO" ] && echo "$WIFI_CONNECTED" || echo "$WIFI_DISCONNECTED")"
+  ICON="$([ -n "$(ipconfig getifaddr en0)" ] && echo "$WIFI_CONNECTED" || echo "$WIFI_DISCONNECTED")"
 
   sketchybar --set $NAME icon="$ICON" label="$LABEL"
 }
@@ -21,7 +21,7 @@ click() {
 
 case "$SENDER" in
   "wifi_change") update
-  ;;
+    ;;
   "mouse.clicked") click
-  ;;
+    ;;
 esac
