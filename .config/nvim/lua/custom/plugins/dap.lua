@@ -57,7 +57,7 @@ return {
     },
     config = function(_, _)
       local path =
-        vim.fn.expand "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+          vim.fn.expand "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
       require("core.utils").load_mappings "dap_python"
     end,

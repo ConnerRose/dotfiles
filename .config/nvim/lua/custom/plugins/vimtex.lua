@@ -9,8 +9,8 @@ return {
         "
         " let g:vimtex_compiler_progname = "nvr"
         " let g:vimtex_view_method = "skim"
-        " let g:vimtex_imaps_enabled = 0           
-        " let g:vimtex_complete_enabled = 0        
+        " let g:vimtex_imaps_enabled = 0
+        " let g:vimtex_complete_enabled = 0
         "
         " call vimtex#init()
         "
@@ -39,6 +39,8 @@ return {
           \ {'name': 'O', 'mathmode': 1, 'concealchar': 'Ω'},
           \ {'name': 'P', 'mathmode': 1, 'concealchar': 'ℙ'},
           \ {'name': 'eps', 'mathmode': 1, 'concealchar': 'ε'},
+          \ {'name': '1', 'mathmode': 1, 'concealchar': '𝟙'},
+          \ {'name': 'C', 'mathmode': 1, 'concealchar': 'ℂ'},
         \]
         ]]
   end,

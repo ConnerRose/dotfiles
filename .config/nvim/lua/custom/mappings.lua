@@ -39,7 +39,7 @@ M.dap = {
       function()
         require("dap.ext.vscode").load_launchjs(
           nil,
-          { codelldb = { "c", "cpp" } }
+          { codelldb = { "c", "cpp" }, lldb = { "c", "cpp" } }
         )
         require("dap").continue()
       end,

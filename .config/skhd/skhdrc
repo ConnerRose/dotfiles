@@ -19,7 +19,7 @@ shift + cmd - l : yabai -m window --warp east
 # focus display
 alt - n : yabai -m display --focus west
 alt - m : yabai -m display --focus east
- 
+
 # move window across displays
 shift + alt - n : yabai -m window --display west; yabai -m display --focus west;
 shift + alt - m : yabai -m window --display east; yabai -m display --focus east;
