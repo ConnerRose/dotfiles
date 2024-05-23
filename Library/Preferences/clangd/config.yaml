@@ -56,6 +56,7 @@ Diagnostics:
     Remove:
       - cppcoreguidelines-avoid-magic-numbers
       - readability-magic-numbers
+      - misc-no-recursion
     CheckOptions:
       misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: true
 ---
