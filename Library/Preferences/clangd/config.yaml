@@ -15,7 +15,7 @@ Diagnostics:
       - readability-qualified-auto
       - bugprone-easily-swappable-parameters
     CheckOptions:
-      readability-identifier-naming.VariableCase: camelBack
+      readability-identifier-naming.VariableCase: lower_case
   # clangd 14
   # UnusedIncludes: Strict
 
