@@ -12,6 +12,13 @@ return {
       on_attach = on_attach,
       capabilities = capabilities,
       filetypes = { "python" },
+      settings = {
+        python = {
+          analysis = {
+            typeCheckingMode = "off",
+          },
+        },
+      },
     }
 
     lspconfig.clangd.setup {
@@ -20,6 +27,10 @@ return {
         on_attach(client, bufnr)
       end,
       capabilities = capabilities,
+      cmd = {
+        "clangd",
+        "--offset-encoding=utf-16",
+      },
     }
 
     lspconfig.tsserver.setup {

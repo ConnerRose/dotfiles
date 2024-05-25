@@ -24,4 +24,8 @@ return {
       "typescript-language-server",
     },
   },
+  registries = {
+    "lua:custom-registry",
+    "github:mason-org/mason-registry",
+  },
 }
