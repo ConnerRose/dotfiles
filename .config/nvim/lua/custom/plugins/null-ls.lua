@@ -1,6 +1,9 @@
 return {
   -- "jose-elias-alvarez/null-ls.nvim",
   "nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvimtools/none-ls-extras.nvim",
+  },
   event = "VeryLazy",
   opts = function()
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -19,14 +22,14 @@ return {
           extra_args = { "--indent", 2 },
         },
         formatting.isort,
-        formatting.latexindent,
+        require "none-ls.formatting.latexindent",
         formatting.stylua,
         formatting.prettier.with {
           disabled_filetypes = { "jinja.html" },
         },
-        formatting.eslint_d,
-        formatting.beautysh.with {
-          extra_args = { "--indent-size", "2" },
+        require "none-ls.formatting.eslint_d",
+        formatting.shfmt.with {
+          extra_args = { "--indent", "2" },
         },
         formatting.sql_formatter.with {
           extra_args = {
@@ -38,7 +41,17 @@ return {
         },
 
         diagnostics.djlint,
-        diagnostics.eslint_d,
+        require("none-ls.diagnostics.eslint_d").with {
+          name = "eslint_d",
+          meta = {
+            url = "https://github.com/mantoni/eslint_d.js/",
+            description = "Like ESLint, but faster.",
+            notes = {
+              "Once spawned, the server will continue to run in the background. This is normal and not related to null-ls. You can stop it by running `eslint_d stop` from the command line.",
+            },
+          },
+          command = "eslint_d",
+        },
         diagnostics.mypy.with {
           extra_args = function()
             local virtual = os.getenv "VIRTUAL_ENV" or os.getenv "CONDA_PREFIX"

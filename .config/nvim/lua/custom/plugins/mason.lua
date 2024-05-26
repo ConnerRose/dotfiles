@@ -4,7 +4,7 @@ return {
     ensure_installed = {
       "bash-language-server",
       "black",
-      "beautysh",
+      "shfmt",
       "clang-format",
       "clangd",
       "codelldb",
@@ -22,10 +22,11 @@ return {
       "stylua",
       "sql-formatter",
       "typescript-language-server",
+      "django-stubs",
     },
-  },
-  registries = {
-    "lua:custom-registry",
-    "github:mason-org/mason-registry",
+    registries = {
+      "lua:custom-registry",
+      "github:mason-org/mason-registry",
+    },
   },
 }
