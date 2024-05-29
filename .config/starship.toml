@@ -8,7 +8,7 @@ palette = "catppuccin_mocha"
 
 [c]
 commands = [ [ 'gcc-14', '--version' ] ]
-format = 'via [$name $version]($style)'
+symbol = ' '
 
 [character]
 success_symbol = "[▶](maroon)"
