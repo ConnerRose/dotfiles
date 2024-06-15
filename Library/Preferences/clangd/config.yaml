@@ -52,7 +52,7 @@ CompileFlags:
       -I/usr/local/include/uWebSockets,
       -I/usr/local/include/uSockets,
       -I/usr/local/include/glaze,
-      -I/usr/local/include,
+      # -I/usr/local/include,
     ]
 
 Diagnostics:
