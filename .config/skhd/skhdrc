@@ -52,7 +52,7 @@ ctrl - right : yabai -m window --resize right:50:0; \
 alt - f : yabai -m window --toggle zoom-fullscreen
 
 # rotate space
-alt - r : yabai -m space --rotate 90
+alt - r : yabai -m space --rotate 270
 
 # reload everything
 shift + alt - r : \

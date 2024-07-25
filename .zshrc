@@ -52,7 +52,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias gcc="gcc-14"
 alias g++="g++-14"
-alias ls='ls --color'
+alias ls='lsd'
+alias l='lsd -la'
 alias vim=nvim
 
 # Used for dotfiles repo
@@ -72,6 +73,15 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 # Add to $LIBRARY_PATH
 export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/Cellar/openssl@3/3.3.0/lib/
 
+set -o vi
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/conner/.bun/_bun" ] && source "/Users/conner/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

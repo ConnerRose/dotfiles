@@ -16,6 +16,7 @@ Diagnostics:
       - bugprone-easily-swappable-parameters
     CheckOptions:
       readability-identifier-naming.VariableCase: lower_case
+      readability-identifier-naming.ConstantCase: UPPER_CASE
   # clangd 14
   # UnusedIncludes: Strict
 
@@ -52,7 +53,6 @@ CompileFlags:
       -I/usr/local/include/uWebSockets,
       -I/usr/local/include/uSockets,
       -I/usr/local/include/glaze,
-      # -I/usr/local/include,
     ]
 
 Diagnostics:

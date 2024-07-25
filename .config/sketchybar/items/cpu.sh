@@ -18,6 +18,7 @@ cpu_percent=(
   icon.drawing=off
   update_freq=4
   mach_helper="$HELPER"
+  click_script="open -a 'Activity Monitor'; $POPUP_OFF"
 )
 
 cpu_sys=(
