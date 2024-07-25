@@ -1,4 +1,4 @@
-# Conner's dotfiles
+# My dotfiles
 
 ## Neovim
 
@@ -16,3 +16,5 @@ I took much inspiration from this
 [YouTube video](https://www.youtube.com/watch?v=DOtM1mrWjUo)
 and [blog post](https://castel.dev/post/lecture-notes-1), if you're interested
 in how some of this works. Here's what it looks like:
+
+![VimTex](resources/vimtex.png)
