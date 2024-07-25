@@ -5,33 +5,32 @@ return {
     "nvim-lua/plenary.nvim",
   },
   init = function()
-    local harpoon = require "harpoon"
+    local harpoon = require("harpoon")
 
-    -- REQUIRED
-    harpoon:setup {
+    harpoon:setup({
       settings = {
         save_on_toggle = true,
       },
-    }
-    -- REQUIRED
+    })
 
-    vim.keymap.set("n", "<leader>a", function()
-      harpoon:list():append()
+    local map = vim.keymap.set
+    map("n", "<leader>a", function()
+      harpoon:list():add()
     end)
-    vim.keymap.set("n", "<C-e>", function()
+    map("n", "<C-e>", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set("n", "<C-i>", function()
+    map("n", "<C-i>", function()
       harpoon:list():select(1)
     end)
-    vim.keymap.set("n", "<C-o>", function()
+    map("n", "<C-o>", function()
       harpoon:list():select(2)
     end)
-    vim.keymap.set("n", "<C-p>", function()
+    map("n", "<C-p>", function()
       harpoon:list():select(3)
     end)
-    vim.keymap.set("n", "<C-[>", function()
+    map("n", "<C-[>", function()
       harpoon:list():select(4)
     end)
   end,
