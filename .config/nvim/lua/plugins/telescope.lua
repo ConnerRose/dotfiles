@@ -39,6 +39,7 @@ return {
           file_browser = {
             theme = "ivy",
             hijack_netrw = true,
+            grouped = true,
           },
         },
         extensions_list = {

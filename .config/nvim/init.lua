@@ -72,7 +72,7 @@ vim.o.completeopt = "menuone,noselect"
 -- Set terminal gui colors to true
 vim.o.termguicolors = true
 
-vim.wrap = false
+vim.o.wrap = false
 
 local map = vim.keymap.set
 
