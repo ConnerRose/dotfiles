@@ -7,6 +7,9 @@ return {
     null_ls.builtins.formatting.clang_format,
     null_ls.builtins.formatting.golines,
     null_ls.builtins.formatting.goimports_reviser,
+    require("none-ls.formatting.latexindent").with({
+      extra_args = { "-m" },
+    }),
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.stylua,
   },

@@ -126,6 +126,10 @@ return {
         on_attach = on_attach,
       })
 
+      lspconfig.dafny.setup({
+        on_attach = on_attach,
+      })
+
       lspconfig.nil_ls.setup({})
     end,
   },
