@@ -68,6 +68,9 @@ Diagnostics:
       - readability-magic-numbers
       - misc-no-recursion
       - cppcoreguidelines-owning-memory
+      - cppcoreguidelines-pro-bounds-constant-array-index
+      - cppcoreguidelines-avoid-non-const-global-variables
+      - cppcoreguidelines-pro-bounds-pointer-arithmetic
     CheckOptions:
       misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: true
 ---

@@ -2,7 +2,7 @@
 
 ## Neovim
 
-I Stole most of my Neovim and tmux configurations from
+I stole most of my Neovim and tmux configurations from
 [Dreams of Code's dotfiles](https://github.com/elliottminns/dotfiles).
 
 ![Neovim](resources/neovim.png)
