@@ -53,6 +53,8 @@ CompileFlags:
       -I/usr/local/include/uWebSockets,
       -I/usr/local/include/uSockets,
       -I/usr/local/include/glaze,
+      -lc,
+      -D_XOPEN_SOURCE,
     ]
 
 Diagnostics:
@@ -64,13 +66,16 @@ Diagnostics:
       - google-readability-casting
       - misc-*
     Remove:
-      - cppcoreguidelines-avoid-magic-numbers
-      - readability-magic-numbers
+      # - readability-magic-numbers
       - misc-no-recursion
-      - cppcoreguidelines-owning-memory
-      - cppcoreguidelines-pro-bounds-constant-array-index
+      - performance-no-int-to-ptr
+      # - cppcoreguidelines-avoid-magic-numbers
+      # - cppcoreguidelines-pro-bounds-constant-array-index
+      # - cppcoreguidelines-pro-bounds-pointer-arithmetic
       - cppcoreguidelines-avoid-non-const-global-variables
-      - cppcoreguidelines-pro-bounds-pointer-arithmetic
+      - cppcoreguidelines-owning-memory
+      - cppcoreguidelines-pro-type-reinterpret-cast
+      - cppcoreguidelines-pro-type-vararg
     CheckOptions:
       misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: true
 ---
