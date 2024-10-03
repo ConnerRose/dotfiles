@@ -6,16 +6,28 @@ return {
     init = function()
       local builtin = require("telescope.builtin")
       local wk = require("which-key")
-      wk.register({
-        ["ff"] = { builtin.find_files, "Find File" },
-        ["fb"] = { builtin.buffers, "Find Buffer" },
-        ["fg"] = { builtin.live_grep, "Find with Grep" },
-        ["fh"] = { builtin.help_tags, "Find Help" },
-        ["fn"] = {
-          ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-          "File Browser",
-        },
-      }, { prefix = "<leader>" })
+      wk.add(
+        {
+          -- ["ff"] = { builtin.find_files, "Find File" },
+          -- ["fb"] = { builtin.buffers, "Find Buffer" },
+          -- ["fg"] = { builtin.live_grep, "Find with Grep" },
+          -- ["fh"] = { builtin.help_tags, "Find Help" },
+          -- ["fn"] = {
+          --   ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+          --   "File Browser",
+          -- },
+          { "<leader>ff", builtin.find_files, desc = "Find File" },
+          { "<leader>fb", builtin.buffers,    desc = "Find Buffer" },
+          { "<leader>fg", builtin.live_grep,  desc = "Find with Grep" },
+          { "<leader>fh", builtin.help_tags,  desc = "Find Help" },
+          {
+            "<leader>fn",
+            ":Telescope file_browser path=%:p:help |select_buffer=true<CR>|",
+            desc = "File Browser",
+          },
+        }
+      -- , { prefix = "<leader>" }
+      )
     end,
     opts = function()
       return {

@@ -3,8 +3,8 @@ local cmp = require("cmp")
 local cmp_ui = {
   icons = true,
   lspkind_text = true,
-  style = "default", -- default/flat_light/flat_dark/atom/atom_colored
-  border_color = "grey_fg", -- only applicable for "default" style, use color names from base30 variables
+  style = "default",           -- default/flat_light/flat_dark/atom/atom_colored
+  border_color = "grey_fg",    -- only applicable for "default" style, use color names from base30 variables
   selected_item_bg = "simple", -- colored / simple
 }
 local cmp_style = cmp_ui.style
@@ -27,7 +27,7 @@ local formatting_style = {
     else
       icon = cmp_ui.lspkind_text and (" " .. icon .. " ") or icon
       item.kind =
-        string.format("%s %s", icon, cmp_ui.lspkind_text and item.kind or "")
+          string.format("%s %s", icon, cmp_ui.lspkind_text and item.kind or "")
     end
 
     return item
@@ -69,7 +69,7 @@ return {
     completion = {
       side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored")
           and 1
-        or 0,
+          or 0,
       scrollbar = false,
     },
     documentation = {
@@ -91,7 +91,7 @@ return {
     }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if
-        vim.bo.filetype ~= "tex" and require("luasnip").expand_or_jumpable()
+          vim.bo.filetype ~= "tex" and require("luasnip").expand_or_jumpable()
       then
         vim.fn.feedkeys(
           vim.api.nvim_replace_termcodes(
