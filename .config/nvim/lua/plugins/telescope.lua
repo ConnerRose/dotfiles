@@ -22,7 +22,7 @@ return {
           { "<leader>fh", builtin.help_tags,  desc = "Find Help" },
           {
             "<leader>fn",
-            ":Telescope file_browser path=%:p:help |select_buffer=true<CR>|",
+            ":Telescope file_browser path=%:p:help select_buffer=true<CR>",
             desc = "File Browser",
           },
         }
