@@ -37,6 +37,7 @@
   "trouble.nvim": { "branch": "main", "commit": "6efc446226679fda0547c0fd6a7892fd5f5b15d8" },
   "ultisnips": { "branch": "master", "commit": "49dc8cb2086db19d385791c8e1635723b0fd95c7" },
   "vim-latex-live-preview": { "branch": "master", "commit": "e1906cd4930a58ebaa5eb446436df23522eafb51" },
+  "vim-loves-dafny": { "branch": "master", "commit": "d75d3b074a3da2b0fa9fd5bc980f52ec82c2ad7b" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
   "vim-tmux-navigator": { "branch": "master", "commit": "a9b52e7d36114d40350099f254b5f299a35df978" },
   "vimtex": { "branch": "master", "commit": "b9cc11536a4e726c58c4776e9bcecff26fc454cb" },
