@@ -1,6 +1,4 @@
 return {
-  {
-    "mlr-msft/vim-loves-dafny",
-    ft = { "dafny" },
-  },
+  "mlr-msft/vim-loves-dafny",
+  ft = { "dafny" },
 }

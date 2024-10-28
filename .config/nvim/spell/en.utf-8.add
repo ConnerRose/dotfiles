@@ -75,3 +75,9 @@ MoveLeft
 ghost
 a1
 a2
+candidateId
+recruiterId
+Postgres
+postgres
+dom
+json
