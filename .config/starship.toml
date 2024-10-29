@@ -4,6 +4,10 @@ right_format = """$cmd_duration"""
 
 add_newline = true
 
+[git_branch]
+symbol = '󰘬 '
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
 [c]
 commands = [ [ 'gcc-14', '--version' ] ]
 symbol = ' '
