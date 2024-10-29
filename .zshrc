@@ -73,7 +73,14 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 # Add to $LIBRARY_PATH
 export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/Cellar/openssl@3/3.3.0/lib/
 
+# Add dafny to path
+export PATH="/Users/conner/dafny/:$PATH"
+
 set -o vi
+# Thank you jake
+bindkey -v
+bindkey "^H" backward-delete-char
+bindkey "^?" backward-delete-char
 
 # Shell integrations
 eval "$(fzf --zsh)"
