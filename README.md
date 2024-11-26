@@ -7,8 +7,6 @@
 I stole most of my Neovim and tmux configurations from
 [Dreams of Code's dotfiles](https://github.com/elliottminns/dotfiles).
 
-![Neovim](resources/neovim.png)
-
 This past semester, I used Neovim almost exclusively to write LaTeX
 to complete my homework for my math and CS classes. Finding a better way
 to write LaTeX than Overleaf or a VSCode extension is actually what got me
