@@ -1,5 +1,7 @@
 # My dotfiles
 
+![Rice](resources/rice.png)
+
 ## Neovim
 
 I stole most of my Neovim and tmux configurations from
