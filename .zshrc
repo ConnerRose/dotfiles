@@ -55,6 +55,7 @@ alias g++="g++-14"
 alias ls='lsd'
 alias l='lsd -la'
 alias vim=nvim
+alias diff=colordiff
 
 # Used for dotfiles repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -69,6 +70,7 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 # Add to $PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # Add to $LIBRARY_PATH
 export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/Cellar/openssl@3/3.3.0/lib/
@@ -92,3 +94,8 @@ eval "$(starship init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# boost for eecs482 p4
+export CPLUS_INCLUDE_PATH=/usr/local/boost/include:
+export LIBRARY_PATH=/usr/local/boost/lib:
+export LD_LIBRARY_PATH=/usr/local/boost/lib:/opt/homebrew/opt/openssl@3/lib
