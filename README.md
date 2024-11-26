@@ -1,6 +1,6 @@
 # My dotfiles
 
-![Rice](resources/rice.png)
+![Rice](resources/rose-pine.png)
 
 ## Neovim
 
