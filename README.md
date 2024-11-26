@@ -19,4 +19,4 @@ I took much inspiration from this
 and [blog post](https://castel.dev/post/lecture-notes-1), if you're interested
 in how some of this works. Here's what it looks like:
 
-![VimTex](resources/vimtex.png)
+![VimTex](resources/vimtex-demo.png)
