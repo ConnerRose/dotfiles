@@ -17,16 +17,16 @@ return {
           --   "File Browser",
           -- },
           { "<leader>ff", builtin.find_files, desc = "Find File" },
-          { "<leader>fb", builtin.buffers,    desc = "Find Buffer" },
-          { "<leader>fg", builtin.live_grep,  desc = "Find with Grep" },
-          { "<leader>fh", builtin.help_tags,  desc = "Find Help" },
+          { "<leader>fb", builtin.buffers, desc = "Find Buffer" },
+          { "<leader>fg", builtin.live_grep, desc = "Find with Grep" },
+          { "<leader>fh", builtin.help_tags, desc = "Find Help" },
           {
             "<leader>fn",
-            ":Telescope file_browser path=%:p:help select_buffer=true<CR>",
+            ":Telescope file_browser path=%:p:help select_buffer=true<CR><Esc>",
             desc = "File Browser",
           },
         }
-      -- , { prefix = "<leader>" }
+        -- , { prefix = "<leader>" }
       )
     end,
     opts = function()

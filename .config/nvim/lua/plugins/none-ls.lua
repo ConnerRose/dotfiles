@@ -18,6 +18,17 @@ return {
         }),
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.stylua,
+        -- require("none-ls.diagnostics.eslint_d").with({
+        --   name = "eslint_d",
+        --   meta = {
+        --     url = "https://github.com/mantoni/eslint_d.js/",
+        --     description = "Like ESLint, but faster.",
+        --     notes = {
+        --       "Once spawned, server will continue to run in the background.",
+        --     },
+        --   },
+        --   command = "eslint_d",
+        -- }),
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

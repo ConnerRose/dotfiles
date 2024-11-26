@@ -324,7 +324,7 @@ function __icon_map() {
    "Notability")
         icon_result=":notability:"
         ;;
-   "Notes" | "备忘录")
+   "Notes" | "Goodnotes" | "备忘录")
         icon_result=":notes:"
         ;;
    "Notion")

@@ -10,7 +10,7 @@ cpu_top=(
 )
 
 cpu_percent=(
-  label.font="$FONT:Heavy:12"
+  label.font="$FONT:Bold:12"
   label=CPU
   y_offset=-4
   padding_right=15
@@ -23,8 +23,8 @@ cpu_percent=(
 
 cpu_sys=(
   width=0
-  graph.color=$RED
-  graph.fill_color=$RED
+  graph.color=$WHITE
+  graph.fill_color=$WHITE
   label.drawing=off
   icon.drawing=off
   background.height=30

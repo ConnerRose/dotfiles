@@ -320,7 +320,7 @@ case $@ in
    "Notability")
         icon_result=":notability:"
         ;;
-   "Notes" | "备忘录")
+   "Notes" | "备忘录" | "Goodnotes")
         icon_result=":notes:"
         ;;
    "Notion")

@@ -86,7 +86,6 @@ map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move lines down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up" })
 map("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })
 map("v", "<leader>d", '"_d', { desc = "Delete without yanking" })
-
 map("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
 
 -- add binaries installed by mason.nvim to path
