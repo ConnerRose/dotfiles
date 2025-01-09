@@ -1,0 +1,29 @@
+.callout[data-callout="theorem"] {
+  --callout-color: 0, 255, 255;
+  --callout-icon: lucide-info;
+}
+
+.callout[data-callout="proposition"] {
+  --callout-color: 0, 255, 255;
+  --callout-icon: lucide-info;
+}
+
+.callout[data-callout="definition"] {
+  --callout-color: 0, 255, 0;
+  --callout-icon: lucide-book-marked;
+}
+
+.callout[data-callout="proof"] {
+  --callout-color: 50, 100, 255;
+  --callout-icon: lucide-check;
+}
+
+.callout[data-callout="lemma"] {
+  --callout-color: 255, 255, 255;
+  --callout-icon: lucide-info;
+}
+
+.callout[data-callout="remark"] {
+  --callout-color: 255, 255, 255;
+  --callout-icon: lucide-info;
+}
