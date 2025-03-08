@@ -18,6 +18,7 @@ return {
         }),
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.ocamlformat,
         -- require("none-ls.diagnostics.eslint_d").with({
         --   name = "eslint_d",
         --   meta = {

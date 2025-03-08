@@ -22,10 +22,13 @@ return {
           \ {'name': 'F', 'mathmode': 1, 'concealchar': '𝓕'},
           \ {'name': 'R', 'mathmode': 1, 'concealchar': 'ℝ'},
           \ {'name': 'O', 'mathmode': 1, 'concealchar': 'Ω'},
-          \ {'name': 'P', 'mathmode': 1, 'concealchar': 'ℙ'},
+          \ {'name': 'P', 'mathmode': 1, 'concealchar': '𝒫'},
           \ {'name': 'eps', 'mathmode': 1, 'concealchar': 'ε'},
           \ {'name': '1', 'mathmode': 1, 'concealchar': '𝟙'},
           \ {'name': 'C', 'mathmode': 1, 'concealchar': 'ℂ'},
+          \ {'name': 'S', 'mathmode': 1, 'concealchar': '𝕊'},
+          \ {'name': 'N', 'mathmode': 1, 'concealchar': 'ℕ'},
+          \ {'name': 'T', 'mathmode': 1, 'concealchar': '𝒯'},
         \]
         ]])
   end,

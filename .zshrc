@@ -52,10 +52,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias gcc="gcc-14"
 alias g++="g++-14"
-alias ls='lsd'
-alias l='lsd -la'
+alias ls='lsd --group-dirs first'
+alias l='lsd --group-dirs first -la'
 alias vim=nvim
 alias diff=colordiff
+alias fastfetch="fastfetch -c ~/.config/fastfetch/config.jsonc"
 
 # Used for dotfiles repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -71,9 +72,8 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
-
-# Add to $LIBRARY_PATH
-export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/Cellar/openssl@3/3.3.0/lib/
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # Add dafny to path
 export PATH="/Users/conner/dafny/:$PATH"
@@ -96,6 +96,26 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # boost for eecs482 p4
-export CPLUS_INCLUDE_PATH=/usr/local/boost/include:
-export LIBRARY_PATH=/usr/local/boost/lib:
-export LD_LIBRARY_PATH=/usr/local/boost/lib:/opt/homebrew/opt/openssl@3/lib
+export CPLUS_INCLUDE_PATH="/usr/local/boost/include:$CPLUS_INCLUDE_PATH"
+export LIBRARY_PATH="/usr/local/boost/lib:$LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/boost/lib:$LD_LIBRARY_PATH"
+export LDFLAGS="-L$(brew --prefix openssl@3)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl@3)/include"
+export PKG_CONFIG_PATH="$(brew --prefix openssl@3)/lib/pkgconfig"
+
+# lfcd stuff
+LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
+LFCD="/path/to/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+
+export EDITOR=nvim
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/conner/.opam/opam-init/init.zsh' ]] || source '/Users/conner/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration

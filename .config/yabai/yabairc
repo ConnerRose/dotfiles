@@ -20,7 +20,7 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 
 # floating windows are always on top (default: off)
 yabai -m config window_topmost on
-yabai -m config window_shadow off
+yabai -m config window_shadow float
 
 # center mouse on window with focus
 # yabai -m config mouse_follows_focus on

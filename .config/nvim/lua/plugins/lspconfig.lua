@@ -139,5 +139,7 @@ return {
     })
 
     lspconfig.nil_ls.setup({})
+
+    lspconfig.ocamlls.setup({})
   end,
 }
