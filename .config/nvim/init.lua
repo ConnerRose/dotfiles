@@ -70,6 +70,7 @@ vim.o.wrap = false
 -- Enable spellcheck
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
+vim.opt.showmode = false
 
 local map = vim.keymap.set
 

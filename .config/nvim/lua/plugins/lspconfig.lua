@@ -1,6 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   lazy = false,
+  dependencies = { "mfussenegger/nvim-jdtls" },
   config = function()
     local lspconfig = require("lspconfig")
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -140,6 +141,6 @@ return {
 
     lspconfig.nil_ls.setup({})
 
-    lspconfig.ocamlls.setup({})
+    lspconfig.ocamllsp.setup({})
   end,
 }
