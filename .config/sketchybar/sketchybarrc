@@ -21,9 +21,9 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=40
+  height=32 # 40
   color=$BAR_COLOR
-  border_width=2
+  border_width=0
   border_color=$BAR_BORDER_COLOR
   shadow=off
   position=top
@@ -31,7 +31,7 @@ bar=(
   padding_right=10
   padding_left=10
   # y_offset=-5
-  margin=-2
+  margin=0
   topmost=window
 )
 
@@ -79,7 +79,7 @@ source "$ITEM_DIR/wifi.sh"
 # source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/event.sh"
+# source "$ITEM_DIR/event.sh"
 source "$ITEM_DIR/cpu.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)

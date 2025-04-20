@@ -2,7 +2,7 @@
 
 update() {
   source "$CONFIG_DIR/icons.sh"
-  LABEL="$INFO ($(ipconfig getifaddr en0))"
+  LABEL="$INFO ($(ipconfig getifaddr en0)) |"
   ICON="$([ -n "$(ipconfig getifaddr en0)" ] && echo "$WIFI_CONNECTED" || echo "$WIFI_DISCONNECTED")"
 
   sketchybar --set $NAME icon="$ICON" label="$LABEL"
