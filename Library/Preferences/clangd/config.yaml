@@ -86,6 +86,7 @@ Diagnostics:
       - cppcoreguidelines-pro-type-reinterpret-cast
       - cppcoreguidelines-pro-type-vararg
       - cppcoreguidelines-special-member-functions
+      - cppcoreguidelines-no-malloc
     CheckOptions:
       misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: true
 ---

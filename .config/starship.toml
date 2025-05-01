@@ -1,50 +1,48 @@
-format = """$all"""
+"$schema" = 'https://starship.rs/config-schema.json'
 
-right_format = """$cmd_duration"""
+format = """
+$directory\
+$git_branch\
+$git_status\
+\n$character\
+"""
 
-add_newline = true
+palette = "rose-pine"
 
-[git_branch]
-symbol = '󰘬 '
-format = '[$symbol$branch(:$remote_branch)]($style) '
-
-[c]
-commands = [ [ 'gcc-14', '--version' ] ]
-symbol = ' '
+[palettes.rose-pine]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
-vimcmd_symbol = "[❮](bold green)"
+success_symbol = "[ ](fg:bold gold)"
+error_symbol = "[ ](fg:bold love)"
+vimcmd_symbol = "[ ](fg:bold gold)"
 
 [directory]
+format = "[$path]($iris)"
+style = "fg:gold"
 truncation_length = 0
-style = "bold lavender"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[git_branch]
+format = "[ $symbol $branch]($style)"
+style = "fg:iris"
+symbol = '󰘬'
+
+[git_status]
+disabled = false
+style = "fg:love"
+format = '([ $all_status$ahead_behind]($style))'
+untracked = '[?](fg:gold)'
+stashed = '[\$](fg:iris)'
+modified = '[!](fg:gold)'
+renamed = '[»](fg:iris)'
+deleted = '[✘]($style)'
+staged = '[++](fg:gold)'
+ahead = '[⇡\(${count}\)](fg:foam)'
+diverged = '⇕[\[](fg:iris)[⇡\(${ahead_count}\)](fg:foam)[⇣\(${behind_count}\)](fg:rose)[\]](fg:iris)'
+behind = '[⇣\(${count}\)](fg:rose)'

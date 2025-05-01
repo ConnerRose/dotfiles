@@ -1,5 +1,4 @@
 theme = rose-pine
 window-decoration = false
 font-size = 16
-font-family = JetBrainsMono
 quit-after-last-window-closed = true

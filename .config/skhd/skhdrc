@@ -1,7 +1,7 @@
 # quick terminal
-cmd - return : open -a kitty.app -n;\
-               sleep 0.3;\
-               yabai -m window $(yabai -m query --windows | jq '[.[] | select(.app == "kitty")] | max_by(.id) | .id') --toggle float --grid 4:4:1:1:2:2
+# cmd - return : open -a kitty.app -n;\
+#                sleep 0.3;\
+#                yabai -m window $(yabai -m query --windows | jq '[.[] | select(.app == "kitty")] | max_by(.id) | .id') --toggle float --grid 4:4:1:1:2:2
 
 # focus window
 alt - h : yabai -m window --focus west
