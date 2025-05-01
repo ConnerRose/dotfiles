@@ -58,8 +58,7 @@ return {
         return
       end
 
-      -- Create a floating window to display the man page
-      local buf = vim.api.nvim_create_buf(false, true) -- scratch buffer
+      local buf = vim.api.nvim_create_buf(false, true)
       vim.api.nvim_buf_set_lines(buf, 0, -1, false, output)
       vim.api.nvim_buf_set_option(buf, "filetype", "man")
       vim.api.nvim_buf_set_option(buf, "modifiable", false)
