@@ -1,10 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
   lazy = false,
-  dependencies = { "mfussenegger/nvim-jdtls" },
+  dependencies = { "mfussenegger/nvim-jdtls", "saghen/blink.cmp" },
   config = function()
     local lspconfig = require("lspconfig")
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
     local on_attach = function(_, bufnr)
       local function opts(desc)
         return { buffer = bufnr, desc = "LSP " .. desc }
@@ -57,22 +56,21 @@ return {
       map("n", "gr", vim.lsp.buf.references, opts("Show references"))
     end
 
-    capabilities = vim.tbl_deep_extend(
-      "force",
-      capabilities,
-      require("cmp_nvim_lsp").default_capabilities()
-    )
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     lspconfig.pyright.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
 
     lspconfig.ts_ls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
 
     lspconfig.clangd.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
       cmd = {
         "clangd",
         "--offset-encoding=utf-16",
@@ -81,6 +79,7 @@ return {
 
     lspconfig.lua_ls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
       settings = {
         Lua = {
           diagnostics = {
@@ -93,6 +92,7 @@ return {
 
     lspconfig.rust_analyzer.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
       filetypes = { "rust" },
       root_dir = require("lspconfig/util").root_pattern("Cargo.toml"),
       settings = {
@@ -106,6 +106,7 @@ return {
 
     lspconfig.gopls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
       filetypes = { "go", "gomod", "gowork", "gotmpl" },
       settings = {
         env = {
@@ -129,14 +130,17 @@ return {
 
     lspconfig.cssls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
 
     lspconfig.templ.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
 
     lspconfig.dafny.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
 
     lspconfig.nil_ls.setup({})

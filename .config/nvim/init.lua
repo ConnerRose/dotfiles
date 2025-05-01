@@ -36,10 +36,10 @@ vim.wo.number = true
 vim.o.relativenumber = true
 
 -- Tabs vs spaces
-vim.o.tabstop = 2 -- A TAB character looks like 2 spaces
+vim.o.tabstop = 2      -- A TAB character looks like 2 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
-vim.o.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
-vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
+vim.o.softtabstop = 2  -- Number of spaces inserted instead of a TAB character
+vim.o.shiftwidth = 2   -- Number of spaces inserted when indenting
 
 -- Enable mouse mode
 vim.o.mouse = "a"
@@ -75,6 +75,8 @@ vim.opt.showmode = false
 local map = vim.keymap.set
 
 map("n", "J", "mzJ`z", { desc = "Combine lines down" })
+-- map("n", "j", "jzz", { desc = "Down (keep cursor in middle of screen)" })
+-- map("n", "k", "kzz", { desc = "Up (keep cursor in middle of screen)" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 map("n", "n", "nzzzv", { desc = "Next match" })
@@ -92,8 +94,8 @@ map("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 vim.env.PATH = vim.fn.stdpath("data")
-  .. "/mason/bin"
-  .. (is_windows and ";" or ":")
-  .. vim.env.PATH
+    .. "/mason/bin"
+    .. (is_windows and ";" or ":")
+    .. vim.env.PATH
 
 require("lazy").setup("plugins")
