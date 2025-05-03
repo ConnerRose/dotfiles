@@ -19,8 +19,8 @@ foam = '#9ccfd8'
 iris = '#c4a7e7'
 
 [character]
-success_symbol = "[ ](fg:bold gold)"
-error_symbol = "[ ](fg:bold love)"
+success_symbol = "[->](fg:bold gold)"
+error_symbol = "[->](fg:bold love)"
 vimcmd_symbol = "[ ](fg:bold gold)"
 
 [directory]
