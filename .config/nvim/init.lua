@@ -10,7 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -75,8 +75,6 @@ vim.opt.showmode = false
 local map = vim.keymap.set
 
 map("n", "J", "mzJ`z", { desc = "Combine lines down" })
--- map("n", "j", "jzz", { desc = "Down (keep cursor in middle of screen)" })
--- map("n", "k", "kzz", { desc = "Up (keep cursor in middle of screen)" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 map("n", "n", "nzzzv", { desc = "Next match" })
@@ -90,6 +88,7 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up" })
 map("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })
 map("v", "<leader>d", '"_d', { desc = "Delete without yanking" })
 map("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
+map("n", "<leader>o", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
