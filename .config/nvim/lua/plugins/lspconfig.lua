@@ -145,5 +145,6 @@ return {
     lspconfig.nil_ls.setup({})
 
     lspconfig.ocamllsp.setup({})
+    lspconfig.svelte.setup({})
   end,
 }
