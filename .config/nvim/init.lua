@@ -29,7 +29,7 @@ autocmd({ "BufEnter", "BufNewFile" }, {
 vim.opt.rtp:prepend(lazypath)
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -71,6 +71,8 @@ vim.o.wrap = false
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 vim.opt.showmode = false
+
+vim.o.winborder = "rounded"
 
 local map = vim.keymap.set
 

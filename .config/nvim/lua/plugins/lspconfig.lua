@@ -146,5 +146,13 @@ return {
 
     lspconfig.ocamllsp.setup({})
     lspconfig.svelte.setup({})
+
+    lspconfig.tinymist.setup({
+      settings = {
+        formatterMode = "typstyle",
+        exportPdf = "onType",
+        semanticTokens = "disable",
+      },
+    })
   end,
 }
