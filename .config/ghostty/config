@@ -1,4 +1,8 @@
-theme = rose-pine
+theme = Rose Pine
+font-family = Maple Mono NF
 window-decoration = false
 font-size = 16
 quit-after-last-window-closed = true
+background-opacity = 0.8
+background-blur = 20
+link-url = true

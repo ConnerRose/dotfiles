@@ -1,8 +1,3 @@
-# quick terminal
-# cmd - return : open -a kitty.app -n;\
-#                sleep 0.3;\
-#                yabai -m window $(yabai -m query --windows | jq '[.[] | select(.app == "kitty")] | max_by(.id) | .id') --toggle float --grid 4:4:1:1:2:2
-
 # focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
@@ -63,7 +58,6 @@ alt - r : yabai -m space --rotate 270
 # reload everything
 shift + alt - r : \
   brew services restart sketchybar; \
-  brew services restart borders; \
   skhd --stop-service; \
   skhd --start-service; \
   yabai --stop-service; \

@@ -1,78 +1,25 @@
--- Set leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.opt.scrolloff = 10
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
+local o = vim.opt
 
-vim.cmd("au BufRead,BufNewFile *.templ setfiletype templ")
-local autocmd = vim.api.nvim_create_autocmd
-
-autocmd({ "BufEnter", "BufNewFile" }, {
-  pattern = { "*.templ" },
-  callback = function()
-    local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_buf_set_option(buf, "filetype", "templ")
-  end,
-})
-
-vim.opt.rtp:prepend(lazypath)
-
--- Set highlight on search
-vim.o.hlsearch = true
-
--- Make line numbers default
-vim.wo.number = true
-vim.o.relativenumber = true
-
--- Tabs vs spaces
-vim.o.tabstop = 2 -- A TAB character looks like 2 spaces
-vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
-vim.o.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
-vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
-
--- Enable mouse mode
-vim.o.mouse = "a"
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
-
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Keep signcolumn on by default
-vim.wo.signcolumn = "yes"
-
--- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
-
-vim.o.termguicolors = true
-vim.o.wrap = false
-
--- Enable spellcheck
-vim.opt.spell = true
-vim.opt.spelllang = "en_us"
-vim.opt.showmode = false
-
-vim.o.winborder = "rounded"
+o.scrolloff = 10
+o.number = true
+o.relativenumber = true
+o.tabstop = 2
+o.expandtab = true
+o.softtabstop = 2
+o.shiftwidth = 2
+o.mouse = "a"
+o.undofile = true
+o.ignorecase = true
+o.smartcase = true
+o.signcolumn = "yes"
+o.spell = true
+o.spelllang = "en_us"
+o.wrap = false
+o.cmdheight = 0
+o.winborder = "rounded"
 
 local map = vim.keymap.set
 
@@ -81,27 +28,124 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 map("n", "n", "nzzzv", { desc = "Next match" })
 map("n", "N", "Nzzzv", { desc = "Previous match" })
-map("n", "<leader>y", '"+y', { desc = "Yank to clipboard" })
-map("n", "<leader>Y", '"+Y', { desc = "Yank rest of line to clipboard" })
-map("n", "<leader>d", '"_d', { desc = "Delete without yanking" })
-
-map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move lines down" })
-map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up" })
-map("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })
-map("v", "<leader>d", '"_d', { desc = "Delete without yanking" })
+map({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
+map("n", "<leader>Y", '"+Y', { desc = "Yank line to clipboard" })
+map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 map("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
-map(
-  "n",
-  "<leader>o",
-  "<CMD>Oil --float<CR>",
-  { desc = "Open parent directory" }
-)
+map("n", "<leader>o", "<CMD>Oil --float<CR>", { desc = "Open Oil" })
 
--- add binaries installed by mason.nvim to path
-local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
-vim.env.PATH = vim.fn.stdpath("data")
-  .. "/mason/bin"
-  .. (is_windows and ";" or ":")
-  .. vim.env.PATH
+vim.lsp.enable({
+  "lua_ls",
+  "clangd",
+  "tinymist",
+})
 
-require("lazy").setup("plugins")
+map("n", "<leader>fm", vim.lsp.buf.format, { desc = "Format buffer" })
+map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+map("n", "gt", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+map("n", "gr", vim.lsp.buf.references, { desc = "Show references" })
+map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Rename symbol" })
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Show code actions" })
+
+vim.pack.add({
+  "https://github.com/rose-pine/neovim",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/nvim-mini/mini.nvim",
+  "https://github.com/benomahony/oil-git.nvim",
+  "https://github.com/stevearc/oil.nvim",
+  "https://github.com/nvim-tree/nvim-web-devicons",
+  "https://github.com/nvim-lualine/lualine.nvim",
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/nvim-telescope/telescope.nvim",
+  "https://github.com/chomosuke/typst-preview.nvim",
+  {
+    src = "https://github.com/saghen/blink.cmp",
+    version = vim.version.range("^1")
+  },
+  "https://github.com/christoomey/vim-tmux-navigator",
+  "https://github.com/lewis6991/gitsigns.nvim",
+})
+
+local builtin = require("telescope.builtin")
+map("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+
+require("rose-pine").setup({
+  styles = {
+    transparency = true,
+  },
+  highlight_groups = {
+    NormalFloat = { bg = "#191723" },
+    FloatBorder = { bg = "#191723" },
+    FloatTitle = { bg = "#191723" },
+    BlinkCmpMenu = { bg = "#191723" },
+    BlinkCmpMenuBorder = { bg = "#191723" },
+    BlinkCmpDocBorder = { bg = "#21202e" },
+  }
+})
+
+require("nvim-treesitter").setup({
+  ensure_installed = {
+    "cpp",
+    "lua",
+  },
+})
+
+require("mini.icons").setup()
+require("mini.pairs").setup()
+require("mini.comment").setup({
+  mappings = {
+    comment = "<leader>/",
+    comment_line = "<leader>/",
+    comment_visual = "<leader>/",
+    textobject = "<leader>/",
+  }
+})
+require("mini.move").setup({
+  mappings = {
+    left = "",
+    right = "",
+    down = "J",
+    up = "K",
+  },
+})
+
+require("oil").setup({
+  columns = {
+    "icon",
+    "permissions",
+  },
+  view_options = {
+    show_hidden = true,
+  },
+})
+
+require("nvim-web-devicons").setup()
+
+require("lualine").setup({
+  options = {
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+  },
+  sections = {
+    lualine_a = { "mode" },
+    lualine_b = { "diff", "diagnostics" },
+    lualine_c = { "filename" },
+    lualine_x = { "lsp_status" },
+    lualine_y = { "branch" },
+    lualine_z = { "location" },
+  },
+})
+
+require("blink.cmp").setup({
+  signature = { enabled = true },
+})
+
+require("gitsigns").setup()
+
+vim.cmd("colorscheme rose-pine")

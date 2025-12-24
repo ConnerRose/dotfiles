@@ -1,14 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$time\
 $directory\
 $git_branch\
 $git_status\
+$python\
 \n$character\
 """
 
-palette = "oldworld"
+palette = "rose-pine"
 
 [palettes.rose-pine]
 overlay = '#26233a'
@@ -19,44 +19,24 @@ pine = '#31748f'
 foam = '#9ccfd8'
 iris = '#c4a7e7'
 
-[palettes.oldworld]
-black = '#000000'
-white = '#c9c7cd'
-red = '#ea83a5'
-green = '#90b99f'
-yellow = '#e6b99d'
-blue = '#9ca2cf'
-purple = '#aca1cf'
-teal = '#85b5ba'
-grey = '#353539'
-pink = '#ED96B3'
-light-green = '#a7c8b3'
-light-yellow = '#eac5ae'
-light-blue = '#acb1d7'
-light-purple = '#b7aed5'
-light-teal = '#97c0c4'
-bright-white = '#d3d1d7'
-
 [time]
 disabled = false
 format = '[\[$time\]]($style) '
-# time_format = '%T'
-# utc_time_offset = '-5'
-# time_range = '10:00:00-14:00:00'
+style = "fg:gold"
 
 [character]
-success_symbol = "[❯](fg:bold green)"
-error_symbol = "[❯](fg:bold red)"
-vimcmd_symbol = "[](fg:bold green)"
+success_symbol = "[❯](fg:bold pine)"
+error_symbol = "[❯](fg:bold love)"
+vimcmd_symbol = "[](fg:bold pine)"
 
 [directory]
-format = "[$path]($style)"
-style = "fg:purple"
+format = "[󰉋 $path]($style)"
+style = "fg:iris"
 truncation_length = 0
 
 [git_branch]
 format = "[ $symbol $branch]($style)"
-style = "fg:yellow"
+style = "fg:foam"
 symbol = '󰘬'
 
 [git_status]
@@ -72,3 +52,8 @@ staged = '[++](fg:gold)'
 ahead = '[⇡\(${count}\)](fg:light-blue)'
 diverged = '⇕[\[](fg:red)[⇡\(${ahead_count}\)](fg:light-blue)[⇣\(${behind_count}\)](fg:pink)[\]](fg:yellow)'
 behind = '[⇣\(${count}\)](fg:pink)'
+
+[python]
+pyenv_version_name = true
+format = ' [(\($virtualenv\) )]($style)'
+style = 'fg:light-green'
