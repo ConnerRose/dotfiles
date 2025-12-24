@@ -50,13 +50,12 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias gcc="gcc-14"
-alias g++="g++-14"
 alias ls='lsd --group-dirs first'
 alias l='lsd --group-dirs first -la'
 alias vim=nvim
 alias diff=colordiff
 alias fastfetch="fastfetch -c ~/.config/fastfetch/config.jsonc"
+alias ssh="TERM=xterm-256color ssh"
 
 # Used for dotfiles repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -74,6 +73,7 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$PATH:/Users/conner/.local/bin"
 
 # Add dafny to path
 export PATH="/Users/conner/dafny/:$PATH"
