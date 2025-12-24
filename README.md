@@ -1,3 +1,3 @@
 # My dotfiles
 
-![Rice](resources/rose-pine.png)
+![Rice](resources/rice.png)
