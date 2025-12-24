@@ -4,7 +4,6 @@ format = """
 $directory\
 $git_branch\
 $git_status\
-$python\
 \n$character\
 """
 
@@ -18,11 +17,6 @@ rose = '#ebbcba'
 pine = '#31748f'
 foam = '#9ccfd8'
 iris = '#c4a7e7'
-
-[time]
-disabled = false
-format = '[\[$time\]]($style) '
-style = "fg:gold"
 
 [character]
 success_symbol = "[❯](fg:bold pine)"
@@ -52,8 +46,3 @@ staged = '[++](fg:gold)'
 ahead = '[⇡\(${count}\)](fg:light-blue)'
 diverged = '⇕[\[](fg:red)[⇡\(${ahead_count}\)](fg:light-blue)[⇣\(${behind_count}\)](fg:pink)[\]](fg:yellow)'
 behind = '[⇣\(${count}\)](fg:pink)'
-
-[python]
-pyenv_version_name = true
-format = ' [(\($virtualenv\) )]($style)'
-style = 'fg:light-green'
