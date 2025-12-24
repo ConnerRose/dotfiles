@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Color Palette
-export BLACK=0xff181926
+export BLACK=0xff000000
 export WHITE=0xffcad3f5
 export RED=0xffed8796
 export GREEN=0xffa6da95
@@ -13,8 +13,8 @@ export GREY=0xff939ab7
 export TRANSPARENT=0x00000000
 
 # General bar colors
-export BAR_COLOR=TRANSPARENT
-export BAR_BORDER_COLOR=TRANSPARENT
+export BAR_COLOR=0xCC191723
+export BAR_BORDER_COLOR=0xCC191723
 # export BAR_COLOR=0xff191723
 # export BAR_BORDER_COLOR=0xff191723
 export ICON_COLOR=$WHITE # Color of all icons
