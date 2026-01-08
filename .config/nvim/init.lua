@@ -38,6 +38,7 @@ vim.lsp.enable({
   "lua_ls",
   "clangd",
   "tinymist",
+  "rust_analyzer",
 })
 
 map("n", "<leader>fm", vim.lsp.buf.format, { desc = "Format buffer" })
@@ -67,6 +68,7 @@ vim.pack.add({
   },
   "https://github.com/christoomey/vim-tmux-navigator",
   "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/folke/trouble.nvim",
 })
 
 local builtin = require("telescope.builtin")
@@ -147,5 +149,14 @@ require("blink.cmp").setup({
 })
 
 require("gitsigns").setup()
+
+require("trouble").setup()
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
+map("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+  { desc = "LSP Definitions / references / ... (Trouble)" })
+map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
+map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
 
 vim.cmd("colorscheme rose-pine")

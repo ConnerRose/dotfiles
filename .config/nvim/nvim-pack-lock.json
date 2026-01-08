@@ -61,6 +61,10 @@
       "rev": "4d0f5e0e7f69071e315515c385fab2a4eff07b3d",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
+    "trouble.nvim": {
+      "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
+      "src": "https://github.com/folke/trouble.nvim"
+    },
     "typst-preview.nvim": {
       "rev": "291972a39db85c5d2e76249748aba4206dfd3bc2",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
