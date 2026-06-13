@@ -5,6 +5,10 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
+    "cornelis": {
+      "rev": "8401538b8d5056571827679658331136c38f11be",
+      "src": "https://github.com/agda/cornelis"
+    },
     "gitsigns.nvim": {
       "rev": "5813e4878748805f1518cee7abb50fd7205a3a48",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -69,9 +73,17 @@
       "rev": "291972a39db85c5d2e76249748aba4206dfd3bc2",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
+    "vim-latex-live-preview": {
+      "rev": "9973568fc7275f70a4277d474821284128850034",
+      "src": "https://github.com/xuhdev/vim-latex-live-preview"
+    },
     "vim-tmux-navigator": {
       "rev": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a",
       "src": "https://github.com/christoomey/vim-tmux-navigator"
+    },
+    "vimtex": {
+      "rev": "82d2305ff71dfb3bd91602534cc9bb9a195bcb38",
+      "src": "https://github.com/lervag/vimtex"
     }
   }
 }
